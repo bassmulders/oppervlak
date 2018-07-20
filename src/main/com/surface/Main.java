@@ -1,4 +1,4 @@
-package main.java.com.surface;
+package com.surface;
 
 public class Main {
 

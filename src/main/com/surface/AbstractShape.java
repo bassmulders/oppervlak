@@ -1,4 +1,4 @@
-package java.com.surface;
+package com.surface;
 
 public abstract class AbstractShape {
     public abstract double surface();
