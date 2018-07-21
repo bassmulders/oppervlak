@@ -1,4 +1,4 @@
-package com.surface;
+package com.areacalculator;
 
 public class Main {
 
