@@ -1,4 +1,4 @@
-package com.areacalculator;
+package com.areacalculator.building;
 
 class RoomBuilder {
 

@@ -1,8 +1,8 @@
-package com.areacalculator;
+package com.areacalculator.shapes;
 
 public class RightAngledTriangle extends Rectangle {
 
-    RightAngledTriangle(double width, double length) {
+    public RightAngledTriangle(double width, double length) {
         setWidth(width);
         setLength(length);
     }

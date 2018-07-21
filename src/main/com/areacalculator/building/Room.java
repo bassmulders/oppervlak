@@ -1,4 +1,8 @@
-package com.areacalculator;
+package com.areacalculator.building;
+
+import com.areacalculator.shapes.AbstractShape;
+import com.areacalculator.shapes.Rectangle;
+import com.areacalculator.shapes.RightAngledTriangle;
 
 import java.util.ArrayList;
 

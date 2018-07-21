@@ -1,4 +1,4 @@
-package com.areacalculator;
+package com.areacalculator.shapes;
 
 public abstract class AbstractShape {
     private double width;

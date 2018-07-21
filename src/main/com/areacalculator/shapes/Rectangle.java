@@ -1,4 +1,4 @@
-package com.areacalculator;
+package com.areacalculator.shapes;
 
 public class Rectangle extends AbstractShape {
 
@@ -7,7 +7,7 @@ public class Rectangle extends AbstractShape {
         setLength(0);
     }
 
-    Rectangle(double width, double length) {
+    public Rectangle(double width, double length) {
         setWidth(width);
         setLength(length);
     }

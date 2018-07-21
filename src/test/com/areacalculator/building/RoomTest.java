@@ -1,24 +1,26 @@
-package com.areacalculator;
+package com.areacalculator.building;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class RoomTest {
-
-    private final static String WOONKAMER = "Woonkamer";
 
     @ParameterizedTest
     @MethodSource("dataProvider")
     void testRoomAreaCalculation(TestValues testValues) {
-        assertEquals(testValues.getExpectedSize(), testValues.room.getSize());
-        assertEquals(testValues.getExpectedName(), testValues.room.getName());
+        Assertions.assertEquals(testValues.getExpectedSize(), testValues.getRoom().getSize());
+        Assertions.assertEquals(testValues.getExpectedName(), testValues.getRoom().getName());
     }
 
     private static Stream<TestValues> dataProvider() {
+        final String WOONKAMER = "Woonkamer";
+        final String BALKON = "Balkon";
+        final String SLAAPKAMR = "Slaapkamer";
+        final String ENKELE_NEGATIEVE_AFMETING = "Enkele negatieve afmeting";
+        final String DUBBELE_NEGATIEVE_AFMETING = "Dubbele negatieve afmeting";
         return Stream.of(
                 new TestValues(RoomBuilder.builder(WOONKAMER)
                         .addRectangle(10, 5)
@@ -26,25 +28,25 @@ class RoomTest {
                         .build(),
                         75,
                         WOONKAMER),
-                new TestValues(RoomBuilder.builder("Balkon")
+                new TestValues(RoomBuilder.builder(BALKON)
                         .addRectangle(2, 2)
                         .build(),
                         4,
-                        "Balkon"),
-                new TestValues(RoomBuilder.builder("Enkele negatieve afmeting")
+                        BALKON),
+                new TestValues(RoomBuilder.builder(ENKELE_NEGATIEVE_AFMETING)
                         .addRectangle(-2, 2)
                         .build(),
                         0,
-                        "Enkele negatieve afmeting"),
-                new TestValues(RoomBuilder.builder("Dubbele negatieve afmeting")
+                        ENKELE_NEGATIEVE_AFMETING),
+                new TestValues(RoomBuilder.builder(DUBBELE_NEGATIEVE_AFMETING)
                         .addRectangle(-2, -0.2)
                         .build(),
                         0,
-                        "Dubbele negatieve afmeting"),
-                new TestValues(RoomBuilder.builder("Slaapkamer")
+                        DUBBELE_NEGATIEVE_AFMETING),
+                new TestValues(RoomBuilder.builder(SLAAPKAMR)
                         .build(),
                         0,
-                        "Slaapkamer")
+                        SLAAPKAMR)
         );
     }
 
